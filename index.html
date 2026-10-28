@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark light">
+<title>Todo — Stub List</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="aurora" aria-hidden="true"></div>
+
+<main class="board">
+  <header class="masthead">
+    <div class="brand">
+      <span class="punch" aria-hidden="true"></span>
+      <h1>Stub List</h1>
+      <p class="tally" id="tally" aria-live="polite"> </p>
+    </div>
+    <div class="meter" role="img" id="meter" aria-label="progress">
+      <span class="meter-fill" id="meterFill"></span>
+    </div>
+  </header>
+
+  <nav class="tabs" role="tablist" aria-label="Filter list">
+    <span class="tab-glider" id="tabGlider" aria-hidden="true"></span>
+    <button class="tab" role="tab" id="tab-active" data-view="active" aria-selected="true" aria-controls="list">
+      Active <span class="tab-count">0</span>
+    </button>
+    <button class="tab" role="tab" id="tab-done" data-view="done" aria-selected="false" aria-controls="list">
+      Done <span class="tab-count">0</span>
+    </button>
+    <button class="tab" role="tab" id="tab-all" data-view="all" aria-selected="false" aria-controls="list">
+      All <span class="tab-count">0</span>
+    </button>
+  </nav>
+
+  <section class="stack">
+    <ul class="list" id="list"></ul>
+    <p class="empty" id="empty" hidden></p>
+  </section>
+
+  <form class="composer" id="composer" autocomplete="off">
+    <span class="composer-plus" aria-hidden="true">+</span>
+    <input id="field" class="field" type="text" name="text" maxlength="200"
+           placeholder="Add a task — press / to jump here" aria-label="New todo" spellcheck="true">
+    <button class="submit" type="submit">Add</button>
+  </form>
+
+  <footer class="fineprint">
+    <span id="fineprint-left">stored locally · nothing leaves this tab</span>
+    <button class="linkify" type="button" id="reset">reset sample data</button>
+  </footer>
+</main>
+
+<div class="toast" id="toast" role="status" aria-live="polite" hidden>
+  <span class="toast-text" id="toastText"></span>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
