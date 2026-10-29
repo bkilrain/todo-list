@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>✦ Todo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="app__head">
+      <h1 class="app__title">✦ Things to do</h1>
+      <p class="app__sub" id="count">Loading…</p>
+    </header>
+
+    <form class="add" id="addForm" autocomplete="off">
+      <input
+        class="add__field"
+        id="addInput"
+        type="text"
+        maxlength="140"
+        placeholder="What needs doing?"
+        aria-label="New todo"
+      />
+      <button class="add__btn" type="submit">Add</button>
+    </form>
+
+    <div class="toolbar">
+      <div class="tabs" role="tablist">
+        <button class="tab is-active" id="tabActive" role="tab" aria-selected="true">Active</button>
+        <button class="tab" id="tabDone" role="tab" aria-selected="false">
+          Done <span class="tab__badge" id="doneBadge">0</span>
+        </button>
+      </div>
+      <button class="clear" id="clearDone" type="button" hidden>Clear done</button>
+    </div>
+
+    <ul class="list" id="list"></ul>
+
+    <p class="empty" id="empty" hidden></p>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
